@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  background-color: white;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  min-height: 30vh;
+  justify-content: center;
+  align-items: center;
+}
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+.dark {
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  background: url("https://img.icons8.com/fluency/26/null/crescent-moon.png");
+  background-repeat: no-repeat;
+  margin-top: 10px;
+}
+.ligth {
+  background: url("https://img.icons8.com/tiny-color/26/null/sun.png");
+  background-repeat: no-repeat;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  margin-top: 10px;
+}
+#logo {
+  margin-left: 10px;
+  text-decoration: none;
+  color: rgba(76, 68, 131);
+}
+.logodark {
+  margin-left: 10px;
+  text-decoration: none;
+  color: white;
+}
+.search-form {
+  padding: 2rem;
+  display: flex;
+}
+.search-form input {
+  font-size: 2rem;
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  border: 2px solid rgba(76, 68, 131);
+}
+.search-form button {
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: rgba(76, 68, 131);
+  color: white;
+  cursor: pointer;
+}
+
+.gallery-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: gray;
+  padding: 0.5rem 0rem;
+}
+.gallery-info a {
+  color: gray;
+  text-decoration: none;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  padding: 2rem 0rem;
+  width: 80%;
+  margin: auto;
+  row-gap: 3rem;
+  column-gap: 3rem;
+}
+.gallery-img img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+.nav-button {
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.more {
+  padding: 1rem 3rem;
+  background-color: rgba(76, 68, 131);
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+}
+.dark-mode {
+  background-color: #3b3c36;
+}

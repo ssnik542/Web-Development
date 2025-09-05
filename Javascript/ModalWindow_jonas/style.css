@@ -1,0 +1,85 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: rgb(53, 48, 48);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.m1 {
+  cursor: pointer;
+  outline: none;
+  width: 200px;
+  height: 50px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  font-style: italic;
+  color: black;
+  background: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 50px;
+  margin-left: 45%;
+}
+
+.m1:hover {
+  filter: brightness(95%);
+}
+
+.m1:active {
+  transform: scale(0.98);
+}
+
+.m1:disabled {
+  cursor: default;
+  filter: brightness(30%);
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+  width: 500px;
+  padding: 10px;
+  border-radius: 20px;
+  margin-left: 35%;
+  margin-top: 10%;
+  align-content: center;
+}
+.modal.hidden {
+  opacity: 0;
+}
+.class-modal {
+  width: 110px;
+  height: 50px;
+  font-style: bold;
+  border: none;
+  background-color: brown;
+}
+.class-modal:hover {
+  cursor: pointer;
+}
+.class-modal:active {
+  transform: scale(0.98);
+}
+@media (max-width: 600px) {
+  button {
+    margin-left: 25%;
+  }
+  .modal {
+    width: 150px;
+    height: 150px;
+    margin-left: 25%;
+  }
+}

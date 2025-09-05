@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tracalorie</title>
+</head>
+
+<body class="bg-black">
+    <div class="text-white relative">
+        <div id="content">
+            <!-- Navbar -->
+            <nav class="flex justify-between py-3 px-2 items-center bg-green-600 flex-col md:flex-row gap-1 md:gap-0">
+                <div class="flex gap-1">
+                    <h1 class="text-2xl">Tracalorie</h1>
+                </div>
+                <div class="flex gap-3">
+                    <button class="border border-white rounded-md p-1 hover:bg-black hover:text-white" id="setLimit">Set
+                        Daily Limit</button>
+                    <button class="border border-white rounded-md p-1 hover:bg-black hover:text-white" id="reset">Reset
+                        Day</button>
+                </div>
+            </nav>
+
+            <!-- calories section -->
+            <section class="mt-4">
+                <div class="flex justify-around gap-2 px-16 text-lg flex-col md:flex-row">
+                    <div class="bg-orange-400 md:w-1/2 flex flex-col items-center py-4 font-bold">
+                        <h1 id="dailyCal">2000</h1>
+                        <h1>Daily Calorie Limit</h1>
+                    </div>
+                    <div class="bg-green-600 md:w-1/2 flex flex-col items-center py-4 font-bold">
+                        <h1 id="totalCal">0</h1>
+                        <h1>Gain/Loss</h1>
+                    </div>
+                </div>
+
+                <div class="flex justify-evenly mt-4 flex font-semibold">
+                    <div class="flex flex-col items-center border border-white p-1 md:px-10 md:py-4 rounded-md w-1/4">
+                        <h1 id="calConsumed">0</h1>
+                        <h1 class="text-sm md:text-lg text-center">Calories Consumed</h1>
+                    </div>
+                    <div class="flex flex-col items-center border border-white p-1 md:px-10 md:py-4 rounded-md w-1/4">
+                        <h1 id="calBurned">0</h1>
+                        <h1 class="text-sm md:text-lg text-center">Calories Burned</h1>
+                    </div>
+                    <div class="flex flex-col items-center border border-white p-1 md:px-10 md:py-4 rounded-md w-1/4"
+                        id="calRemainDabba">
+                        <h1 id="calRemain">0</h1>
+                        <h1 class="text-sm md:text-lg text-center">Calories Reamaining</h1>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress bar -->
+            <div class="mx-16 my-8 border border-white rounded-md">
+                <div class="w-[0px] bg-green-600 text-green-600 py-2" id="progressBar">
+                </div>
+            </div>
+
+            <!-- filter section -->
+            <section class="px-16 flex gap-2 flex-col md:flex-row">
+                <div class="flex md:w-1/2 flex-col" id="meals">
+                    <input type="text" placeholder="Filter Meals..."
+                        class="focus:outline-green-600 p-1 rounded-md text-black placeholder:text-black">
+                    <div class="flex justify-between items-center border border-white py-4 mt-1 rounded-md px-2">
+                        <h1>Meals/Food Items</h1>
+                        <button class="rounded-md p-1 bg-green-600" id="openMealForm">+ Add Meal</button>
+                    </div>
+                    <div class="flex flex-col gap-2 my-1 border border-white p-2 rounded-md hidden" id="addMealForm">
+                        <input type="text" placeholder="Enter Meal"
+                            class="focus:outline-green-600 p-1 rounded-md text-black placeholder:text-black"
+                            id="mealInput">
+                        <input type="number" placeholder="Enter Calories"
+                            class="focus:outline-green-600 p-1 rounded-md text-black placeholder:text-black"
+                            id="mealCalInput">
+                        <div class="text-center">
+                            <button class="rounded-md p-1 bg-orange-400 w-1/5" id="addMeal">Add Meal</button>
+                            <button class="rounded-md p-1 bg-white text-black w-1/5" id="cancelmeal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex md:w-1/2 flex-col" id="workout">
+                    <input type="text" placeholder="Filter Workout..."
+                        class="focus:outline-green-600 p-1 rounded-md text-black placeholder:text-black">
+                    <div class="flex justify-between items-center border border-white py-4 mt-1 rounded-md px-2">
+                        <h1>Workout</h1>
+                        <button class="rounded-md p-1 bg-orange-400" id="openWorkForm">+ Add Workout</button>
+                    </div>
+                    <div class="flex flex-col gap-2 my-1 border border-white p-2 rounded-md hidden" id="addWorkoutForm">
+                        <input type="text" placeholder="Enter Workout"
+                            class="focus:outline-green-600 p-1 rounded-md text-black placeholder:text-black"
+                            id="workInput">
+                        <input type="number" placeholder="Enter Calories"
+                            class="focus:outline-green-600 p-1 rounded-md text-black placeholder:text-black"
+                            id="workCalInput">
+                        <div class="text-center">
+                            <button class="rounded-md p-1 bg-green-600 w-1/5" id="addWork">Add Workout</button>
+                            <button class="rounded-md p-1 bg-white text-black w-1/5" id="cancelwork">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- popup -->
+        <div class="w-96 h-48 absolute top-[50%] left-[50%] bg-white -translate-x-[50%] -translate-y-[50%] rounded-md text-black hidden"
+            id="modal">
+            <div class="flex justify-between p-2">
+                <h1 class="font-bold">Set Daily Limit</h1>
+                <h1 class="cursor-pointer" id="close">❌</h1>
+            </div>
+            <div class="flex flex-col p-2 gap-4 items-center">
+                <h1 class="font-semibold underline">Daily calorie Limit</h1>
+                <input type="number" class="border border-black rounded-md p-1" id="calInput">
+                <button class="rounded-md p-1 bg-green-600 w-1/3 hover:bg-black hover:text-white"
+                    id="save">Save</button>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>

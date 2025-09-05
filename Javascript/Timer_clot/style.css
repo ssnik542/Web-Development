@@ -1,0 +1,44 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+}
+.display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.items {
+  margin-top: 10%;
+}
+input {
+  display: block;
+  border: none;
+  width: 220px;
+  font-size: 60px;
+  text-align: center;
+}
+input:focus{
+  outline: none;
+}
+button{
+  border: none;
+  font-size: 36px;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
