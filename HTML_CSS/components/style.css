@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #404040;
+}
+
+.container {
+    margin: 20px 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-flow: row;
+    /* align-items: center; */
+    justify-items: center;
+    grid-row-gap: 20px;
+    grid-column-gap: 10px;
+}
+
+.box {
+    width: 380px;
+    height: 380px;
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* toggle style */
+
+.toggle-input {
+    display: none;
+}
+
+.toggle-label {
+    display: block;
+    height: 25px;
+    width: 50px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: aliceblue;
+}
+
+.toggle-input:checked+.toggle-label {
+    background-color: rgb(255, 255, 255);
+}
+
+.toggle-label::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 2.5px;
+    left: 12px;
+    transition: 0.2s;
+    box-shadow: -10px 0px 0px 0px #3d3d3d;
+}
+
+
+.toggle-input:checked+.toggle-label::before {
+    left: calc(100% - 22px);
+    background-color: rgb(255, 191, 80);
+    box-shadow: 0px 0px 5px 2px #f6ff00;
+}
+
+.list-menu {
+    list-style: none;
+}
+
+.list-item {
+    cursor: pointer;
+    position: relative;
+}
+
+.list-item::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: red;
+    transform: scaleX(0);
+    transition: 0.2s;
+    transform-origin: left;
+}
+
+.list-item:hover::after {
+    transform: scaleX(1);
+}
+
+.form-input {
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 4px;
+    outline: 2px solid white;
+    color: white;
+    border: none;
+    position: relative;
+    transition: all 500ms;
+    z-index: 1;
+}
+
+.form-input:focus {
+    outline-color: #3c50eb;
+    z-index: 0;
+}
+
+.form-label {
+    position: absolute;
+    translate: -65px;
+    transition: all 500ms;
+}
+
+.form-input:focus+.form-label {
+    padding-inline: 5px;
+    scale: 0.8;
+    transform: translateY(-23px);
+    background-color: #3d3d3d;
+    font-weight: bold;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    rotate: 45deg;
+    transition: all 0.2s ease-in-out;
+    animation: heartbeats 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+}
+
+.heart::after {
+    top: -50px
+}
+
+.heart::before {
+    left: -50px;
+}
+
+
+@keyframes heartbeats {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 125px;
+    position: absolute;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
+    opacity: 0;
+    z-index: 1;
+    bottom: -185%;
+    color: black;
+    left: -35px;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+.tooltiptext::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: -3px;
+    left: 55px;
+    rotate: 45deg;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.clsbtn {
+    position: relative;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #0077cc;
+    border: none;
+    cursor: pointer
+}
+
+.clsbtn:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #005599;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+
+
+.clsbtn:hover::before {
+    transform: translateY(0%);
+}

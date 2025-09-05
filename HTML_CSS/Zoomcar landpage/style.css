@@ -1,0 +1,198 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+.header{
+    font-family: Open Sans;
+    background-color: #33414f;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px 0 25px;
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+}
+.headlink{
+    display:flex;
+}
+.header .headlink span {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+.header .headlink > a, .header .headlink > div {
+    padding: 10px 0;
+    margin: 13px;
+}
+.header .link .info{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1000;
+    color: #000;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+    margin-top: 5px;
+    width: 490px;
+    max-height: 190px;
+    padding: 10px;
+    top: 40px;
+    right: 60px;
+}
+.header .link .info .btn{
+    width: 105px;
+    border-radius: 4px;
+    background-color: #78b442;
+    font-size: 12px;
+    padding: 5px;
+    margin: 10px 0;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+}
+.header .link :hover +div{
+    display: block;
+}
+.header .headlink .download{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1000;
+    color: #000;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+    margin-top: 5px;
+    width: 200px;
+    max-height: 200px;
+    padding: 10px;
+    top: 40px;
+    right: 60px;
+}
+.header .headlink .download .playstore{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid black;
+}
+.header .headlink .download .apple{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: space-evenly;
+}
+.background{
+    height: 520px;
+    background-size: cover;
+    background-position: 50%;
+}
+.intro {
+    padding-top: 160px;
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.head{
+    font-size: 40px;
+    color: #fff;
+    font-weight: 600;
+}
+.intro h3{
+    color: #fff;
+    font-weight: 100;
+    font-size: 20px;
+    margin-top: 5px;
+}
+.intro h3 span{
+    font-weight: 600;
+    border-bottom: 1px dashed #fff;
+    cursor: pointer;
+}
+.search{
+    margin-top: 20px;
+    width: 540px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 5px;
+    line-height: 60px;
+    text-align: left;
+    text-indent: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    cursor: pointer;
+    color: #323a44;
+    text-decoration: none;
+    display:block
+}
+.text h4{
+    font-weight: 100;
+    font-size: 20px;
+}
+.search img{
+    position: absolute;
+top: 22px;
+right: 30px;
+height: 13px;
+width: 13px;
+border: 0;
+display: inline-block;
+}
+.advantage{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #eee;
+    padding: 30px 0;
+}
+.advantage h2 {
+    color: #666;
+    margin-bottom: 15px;
+}
+.advantage p{
+    margin-bottom: 10px;
+}
+.advantage .cards {
+    width: 830px;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.advantage .cards > div {
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+    margin-top: 10px;
+}
+.advantage .cards > div .image {
+    height: 56px;
+    background-size: cover;
+    margin-bottom: 5px;
+}
+.advantage .cards > div h3 {
+    color: #70ad4d;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0;
+}
+.advantage .cards > div p {
+    font-size: 12px;
+}

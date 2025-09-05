@@ -1,0 +1,280 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size: 2.6rem;
+}
+
+li, button, label, input, p {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 4.8rem;
+}
+
+h3 {
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+h4, h5 {
+    font-size: 2.8rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-head {
+    background-color: #000;
+    color: white;
+    /* position: sticky;   
+    /* this is form navigation to stick at the top 
+    top: 0; */
+    z-index: 1;
+}
+
+nav {
+    min-height: 10vh;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    /* ye item ko center krne k liye mtln screen 90% or 
+    margin auto dono side se equally wala kam krta hi hai */
+    width: 90%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: flex;
+    flex: 1 1 40rem;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    flex: 2 1 40rem;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.hero {
+    min-height: 90vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url('x.jpg');
+    background-position: center;
+    background-size: cover;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h3 {
+    padding: 5rem;
+}
+
+button {
+    background: #5f8ec7;
+    border: none;
+    padding: 2rem 6rem;
+    color: rgb(0, 0, 0);
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+    /* animation: buttonAnimation 2s infinite alternate 1s; */
+}
+
+button:hover {
+    background: #18375e;
+}
+
+.locations {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), transparent), url('y.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.locations-head {
+    width: 90%;
+    margin: auto;
+}
+
+.locations-head h2 {
+    padding: 1rem 0rem;
+    text-decoration: underline;
+    text-decoration-thickness: 0.4rem;
+}
+
+.locations-head img {
+    position: absolute;
+    bottom: 0%;
+    right: 30%;
+    animation: carAnimation 10s infinite ease-in;
+}
+
+.benifits-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #031f42;
+    padding: 3rem;
+    min-height: 30vh;
+    color: #fff;
+}
+
+.benifits-head h3 {
+    padding: 1rem;
+}
+
+.cards {
+    width: 90%;
+    margin: auto;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cards img {
+    max-width: 15%;
+    margin: 2rem;
+}
+
+.card {
+    text-align: center;
+    min-height: 40vh;
+    margin: 2rem 5rem;
+    flex: 1 1 25rem;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h4, .card p {
+    padding: 2rem;
+}
+
+.contact {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url("./cont.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-wrapper {
+    background: rgba(19, 28, 39, 0.8);
+    width: 60%;
+    color: #fff;
+    border-radius: 20px;
+}
+.form-head{
+    text-align: center;
+    padding: 4rem;
+}
+.name-form,.email-form{
+    padding: 2rem;
+    text-align: center;
+}
+.form-wrapper label{
+    margin: 0rem 3rem;
+}
+.form-wrapper button{
+    width: 100%;
+    padding: 2rem;
+    margin-top: 8rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.form-wrapper input{
+    padding: 1rem 3rem;
+}
+footer{
+    color: black;
+    /* background: rgb(19, 28, 39); */
+    background: rgb(240, 235, 235);
+}
+.footterwrapper{
+    display: flex;
+    padding: 2rem;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    min-height: 10vh;
+    flex-wrap: wrap;
+    color: #000;
+}
+footer h5{
+    flex:1 1 40rem;
+}
+footer ul{
+    display: flex;
+    list-style: none;
+    flex: 1 1 40rem;
+    justify-content: space-between;
+    align-items: center ;
+}
+@keyframes buttonAnimation {
+    0% {
+        background-color: #81868b;
+    }
+    50% {
+        background-color: #436186;
+    }
+    100% {
+        background-color: #004191;
+    }
+}
+
+@keyframes carAnimation {
+    from {
+        transform: translate(0%, 0%);
+    }
+    to {
+        transform: translate(10%, 10%);
+    }
+}
+
+@media screen and (max-width:932px) {
+    html {
+        font-size: 45%;
+    }
+    nav {
+        text-align: center;
+    }
+    .logo {
+        padding: 2rem;
+    }
+    footer{
+        text-align: center;
+    }
+    footer h5{
+        padding-bottom: 3rem;
+    }
+    /* .form-wrapper {
+        width: 90%;
+    } */
+}

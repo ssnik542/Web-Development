@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.hero {
+  height: 100vh;
+  position: relative;
+  background-color: #2a2734;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style: none;
+}
+
+#letter {
+  position: relative;
+  z-index: 1;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  margin: 0 4px;
+  border-radius: 20px;
+  color: yellow;
+  text-shadow: 0 0 15px yellow, 0 0 25px yellow;
+  animation: animate 1.5s linear infinite;
+  transition: transform 0.5s;
+}
+
+#letter:hover {
+  cursor: pointer;
+  transform: translateY(-20px);
+  /* rotate(10deg) scale(1) */
+}
+
+.waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background-color: #4973ff;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: 500ms;
+}
+
+.waves::before,
+.waves::after {
+  content: "";
+  position: absolute;
+  width: 300vw;
+  height: 300vw;
+  top: -65vw;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+
+.waves::before {
+  border-radius: 44%;
+  background-color: rgba(51, 51, 51, 1);
+  animation: wave 8s linear infinite;
+}
+
+.waves::after {
+  border-radius: 44%;
+  background-color: rgba(51, 51, 51, 0.5);
+  animation: wave 15s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.gallery {
+  --s: 250px;
+  display: grid;
+  transform-style: preserve-3d;
+  --_p: perspective(calc(2.5*var(--s)));
+  animation: r 9s infinite cubic-bezier(.5, -0.5, .5, 1.5);
+}
+
+.gallery img {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1;
+  object-fit: cover;
+  transform: var(--_t, ) translateZ(calc(var(--s)/2));
+}
+
+.gallery img:nth-child() {
+  --_t: rotateX(-90deg)
+}
+
+.gallery img:nth-child(3) {
+  --_t: rotateY(90deg)
+}
+
+.gallery img:nth-child(4) {
+  --_t: rotateX(180deg) rotate(90deg)
+}
+
+.gallery img:nth-child(5) {
+  --_t: rotateX(90deg)
+}
+
+.gallery img:nth-child(6) {
+  --_t: rotateY(-90deg)
+}
+
+@keyframes r {
+
+  0%,
+  3% {
+    transform: var(--_p) rotate3d(0, 0, 0, 0deg)
+  }
+
+  14%,
+  19% {
+    transform: var(--_p) rotate3d(-1, 1, 0, 180deg)
+  }
+
+  31%,
+  36% {
+    transform: var(--_p) rotate3d(0, -1, 0, 90deg)
+  }
+
+  47%,
+  52% {
+    transform: var(--_p) rotate3d(1, 0, 0, 90deg)
+  }
+
+  64%,
+  69% {
+    transform: var(--_p) rotate3d(1, 0, 0, -90deg)
+  }
+}
