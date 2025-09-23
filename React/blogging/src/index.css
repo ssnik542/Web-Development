@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.formbg {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+.infobg {
+    background: rgba(144, 19, 254, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.navclass {
+    transform: translatey(12px);
+    transition: all 0.5s ease-in;
+}
+
+.laut {
+    transition: all 0.5s ease-out;
+}
+
+.aiBtn {
+    border-image: linear-gradient(81.62deg, #2870ea 8.72%, #1b4aef 85.01%);
+    padding: 9px 20px;
+    background: linear-gradient(81.62deg, #2870ea 8.72%, #1b4aef 85.01%);
+    border-radius: 20px;
+}
