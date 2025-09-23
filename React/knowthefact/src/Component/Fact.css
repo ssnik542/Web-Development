@@ -1,0 +1,105 @@
+.message {
+    color: white;
+    font: bold;
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.facts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.fact {
+    color: rgb(0, 0, 0);
+    width: 1125px;
+    height: 60px;
+    background-color: #44403c;
+    border-radius: 7px;
+    margin: 10px auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.fact p {
+    width: 800px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    margin-left: 25px;
+}
+
+.actions span {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    width: 55px;
+    height: 25px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.actions span:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scaleX(0.95);
+}
+
+.fact.technology {
+    background-color: #fdba74;
+}
+
+.fact.science {
+    background-color: #fcd34d;
+}
+
+.fact.finance {
+    background-color: #fda4af;
+}
+
+.fact.society {
+    background-color: #bef264;
+}
+
+.fact.entertainment {
+    background-color: #86efac;
+}
+
+.fact.health {
+    background-color: #5eead4;
+}
+
+.fact.history {
+    background-color: #a5b4fc;
+}
+
+.fact.news {
+    background-color: #f0abfc;
+}
+
+@media only screen and (max-width: 600px) {
+    .fact {
+        width: 320px;
+        height: 150px;
+        flex-direction: column;
+        margin: 5px auto;
+    }
+
+    .actions {
+        margin-left: 0px;
+    }
+
+    .fact p {
+        width: 300px;
+        height: 135px;
+    }
+
+    .message {
+        font-size: 10px;
+        margin: 10px auto;
+    }
+}

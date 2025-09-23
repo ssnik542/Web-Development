@@ -1,0 +1,90 @@
+.sidebar {
+    width: 350px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.sidebar button {
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0.6;
+    display: inline-flex;
+    justify-content: center;
+    /* center the content horizontally */
+    align-items: center;
+    /* center the content vertically */
+    /* --padding-x: 1.2em; */
+}
+
+.sidebar button:hover {
+    transform: translate(10px);
+}
+
+.sidebar button:focus {
+    transform: scale(0.95);
+    opacity: 1;
+}
+
+.ALL {
+    background-color: #44403c;
+}
+
+.TECHNOLOGY {
+    background-color: #fb923c;
+}
+
+.SCIENCE {
+    background-color: #fbbf24;
+}
+
+.FINANCE {
+    background-color: #fb7185;
+}
+
+.SOCIETY {
+    background-color: #a3e635;
+}
+
+.ENTERTAINMENT {
+    background-color: #4ade80;
+}
+
+.HEALTH {
+    background-color: #2dd4bf;
+}
+
+.HISTORY {
+    background-color: #818cf8;
+}
+
+.NEWS {
+    background-color: #e879f9;
+}
+
+@media only screen and (max-width: 600px) {
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        height: 70px;
+        flex-wrap: wrap;
+
+    }
+
+    .sidebar button {
+        width: 70px;
+        font-size: 8px;
+    }
+
+    .sidebar button:hover {
+        transform: translate(0px);
+    }
+
+    .sidebar button:focus {
+        opacity: 1;
+    }
+}
