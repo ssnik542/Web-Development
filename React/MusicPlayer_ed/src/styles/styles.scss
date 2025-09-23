@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+h1,
+h2,
+h3 {
+  color: rgb(54, 54, 54);
+}
+.App {
+  transition: all 0.5s ease;
+}
+.library-active {
+  margin-left: 30%;
+}
+body {
+}
+@import "./player";
+@import "./song";
+@import "./library";
+@import "./Nav";
