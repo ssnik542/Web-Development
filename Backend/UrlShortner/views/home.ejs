@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortner</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <%- include('./nav', {active: "About" }); %>
+        <div class="main">
+            <form class="survey-form" method="post" action="/api/v1/url">
+                <h2>URL Shortner Form</h2>
+                <div class="form-group">
+                    <label for="name">Enter Your URL:</label>
+                    <input type="text" id="url" name="url" required>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Length:</label>
+                    <!-- <input type="range" id="rating" name="rating" min="5" step="1" required> -->
+                    <div class="range" style="display: flex; gap: 1;">
+                        <input type="range" value="5" min="5" oninput="rangeValue.innerText = this.value"
+                            style="cursor: pointer;" id="length" name="length">
+                        <p id="rangeValue">5</p>
+                    </div>
+                </div>
+
+                <button type="submit">Generate</button>
+            </form>
+
+            <% if (locals.name) { %>
+                <% if (locals.urlLength) { %>
+                    <div class="urls">
+                        <h3>Generated URL's</h3>
+                        <table style="border: 1px solid black; border-collapse: collapse;">
+                            <thead>
+                                <th style="border: 1px solid black;">Sr.no</th>
+                                <th style="border: 1px solid black;">Short Id</th>
+                                <th style="border: 1px solid black;">Original URL</th>
+                                <th style="border: 1px solid black;">Click</th>
+                            </thead>
+                            <%urls.reverse().forEach((url,index)=> { %>
+                                <tbody>
+                                    <td style="border: 1px solid black;">
+                                        <%=index+1%>
+                                    </td>
+                                    <td
+                                        style="max-width: 150px; word-wrap: break-word; border: 1px solid black; cursor: pointer;">
+                                        <a href="http://localhost:8000/<%=url.shortId%>" target="_blank">
+                                            <%=url.shortId%>
+                                        </a>
+                                    </td>
+                                    <td style="max-width: 400px; border: 1px solid black">
+                                        <%= url.redirectURL %>
+                                    </td>
+                                    <td style="border: 1px solid black;">
+                                        <%= url.visitHistory.length %>
+                                    </td>
+                                </tbody>
+                                <% }) %>
+                        </table>
+                    </div>
+                    <% } %>
+                        <% } %>
+
+        </div>
+</body>
+
+</html>

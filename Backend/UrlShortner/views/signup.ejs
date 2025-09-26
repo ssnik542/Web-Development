@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./loginStyle.css">
+    <title>Signup</title>
+
+</head>
+
+<body>
+    <%- include('./nav', {active: "About" }); %>
+        <div class="container">
+            <h1 class="title">URL SHORTNER</h1>
+            <div class="card">
+                <form method="post" action="/api/v1/user/signup">
+                    <input type="text" placeholder="Name" name="name">
+                    <input type="text" placeholder="Email" name="email">
+                    <input type="password" placeholder="Password" name="password">
+                    <div class="buttons">
+                        <button type="submit" class="login-button">Sign up</button>
+                    </div>
+                </form>
+                <a href="/login" style="font-size: 14px;color: #fff;">Already have account</a>
+            </div>
+        </div>
+</body>
+
+</html>
