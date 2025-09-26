@@ -1,0 +1,13 @@
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_aGVscGluZy10aWNrLTgyLmNsZXJrLmFjY291bnRzLmRldiQ
+CLERK_SECRET_KEY=sk_test_I1xaRjSgg3J2s0WWDDou8dmvnSull1N09ZZnMiOZyo
+NEXT_PUBLIC_CLERK_SIGN_IN_URL = /sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL = /sign-up
+
+
+# Connect to Supabase via connection pooling.
+DATABASE_URL="postgresql://postgres.hxrpusjqjitjssicctgn:JHWea5O80TftDJBU@aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres?pgbouncer=true"
+
+# Direct connection to the database. Used for migrations.
+DIRECT_URL="postgresql://postgres.hxrpusjqjitjssicctgn:JHWea5O80TftDJBU@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres"
+ARCJET_KEY=ajkey_01jpzprfsme6janz99j989jf8m
+GEMINI_API_KEY = AIzaSyDD_tcWIdgs1QQOhbUzmMIKHG7M6QKPTdE
