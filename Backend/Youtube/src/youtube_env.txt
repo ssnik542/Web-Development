@@ -1,0 +1,5 @@
+PORT = 5000
+DEBUG_MODE = true
+MONGODB_URI= mongodb+srv://ssnik542:1gS5k0WE7oEmSF3W@cluster0.gwhzc9a.mongodb.net
+JWT_SECRET = kjbdskjgl3247!21*&
+REFERESH_SECRET = kjba3756idsn0viy
