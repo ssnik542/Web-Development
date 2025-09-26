@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <%- include('./partials/head') %>
+</head>
+
+<body>
+    <%- include('./partials/navbar') %>
+        <div class="md:mt-16 mt-24 p-14">
+            <div class="flex gap-4 flex-col">
+                <div>
+                    <h1 class="font-bold text-lg">
+                        <%=blog.title %>
+                    </h1>
+                    <h3 class="font-semibold">
+                        <span class="flex items-center gap-2">Published by :
+                            <figure class="-mb-1">
+                                <img src="<%= blog.author.profileurl%>" alt="blogImg" class="w-4 h-4" />
+                            </figure>
+                            <%= blog.author.username %>
+                        </span>
+                    </h3>
+                </div>
+                <div class="flex gap-2 w-full flex-col md:flex-row items-center md:items-start">
+                    <figure class="md:w-5/6 px-4 ">
+                        <img src="<%= blog.blogImg%>" alt="blogImg" class="w-72 h-72 rounded-md " />
+                    </figure>
+                    <div class="text-center md:text-start">
+                        <p class="text-md px-4 ">
+                            <%= blog.description %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="my-4">
+                <h1 class="text-xl font-bold mb-2">Comments : (<%= comments.length %>)
+                </h1>
+                <% if (locals.user) { %>
+                    <form action="/api/v1/blog/comment/<%=blog._id %>" method="post"
+                        class="border-[3px] border-[#333] rounded-lg px-4 md:px-8 py-4">
+                        <div class="flex flex-col justify-between items-center md:flex-row gap-2">
+                            <input type="text" id="content" name="content"
+                                class="focus:outline-none focus:shadow-outline border border-black p-2 rounded-lg md:w-5/6 w-full">
+                            <button type="submit"
+                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                POST
+                            </button>
+                        </div>
+                    </form>
+                    <% } %>
+                        <div class="w-full">
+                            <% if (locals.comments) { %>
+                                <% comments.reverse().forEach((comment,i)=> { %>
+                                    <div class="p-2">
+                                        <div class="flex items-center gap-2">
+                                            <img src="<%= comment.createdby.profileurl%>" alt="blogImg"
+                                                class="w-8 h-8 -mb-1" />
+                                            <div>
+                                                <h1 class="font-bold text-lg">
+                                                    <%= comment.createdby.username %>
+                                                        <span class="font-normal text-sm">
+                                                            <!-- <%= new Date(comment.createdAt).toLocaleDateString() %> -->
+                                                            <%= timesAgo[i]%>
+                                                        </span>
+                                                </h1>
+                                                <p class="">
+                                                    <%= comment.content %>
+
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="flex-grow border-t border-gray-400"></div>
+                                    <% }) %>
+                                        <% } %>
+                        </div>
+            </div>
+        </div>
+</body>
+
+</html>
